@@ -10,4 +10,9 @@ config_version=5
 
 [application]
 
+run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.2")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

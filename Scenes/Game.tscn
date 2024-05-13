@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://um7drbptxxpy"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_dgenu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ohieb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yur84"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tap7i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_il1pt"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_dgenu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_ohieb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_yur84")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2, 205)
+physics_material_override = SubResource("PhysicsMaterial_tap7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_il1pt")
